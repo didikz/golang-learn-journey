@@ -18,6 +18,10 @@ func main() {
 	// slice byte
 	greeting := "hi there!"
 	fmt.Println([]byte(greeting))
+	fmt.Println(" ")
+
+	// save cards to file
+	cards.saveToFile("table_cards")
 
 	// try to create new type with name table
 	tables := createTable()
