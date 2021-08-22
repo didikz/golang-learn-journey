@@ -6,12 +6,18 @@ func main() {
 	cards := newDeck()
 	cardToString := cards.toString()
 	// save cards to file
-	cards.saveToFile("table_cards")
+	cards.saveToFile(getFileName())
 
 	fmt.Println(cardToString)
 	fmt.Println(" ")
 
-	hand, remainingCards := deal(cards, 2)
+	// get deck from file
+	deckFromFile := newDeckfromFile(getFileName())
+	fmt.Println("printing deck from file: ")
+	deckFromFile.print()
+	fmt.Println(" ")
+
+	hand, remainingCards := deal(deckFromFile, 2)
 
 	hand.print()
 	fmt.Println(" ")
@@ -22,12 +28,6 @@ func main() {
 	greeting := "hi there!"
 	fmt.Println("printing byte of: ", greeting)
 	fmt.Println([]byte(greeting))
-	fmt.Println(" ")
-
-	// get deck from file
-	deckFromFile := newDeckfromFile("table_cards")
-	fmt.Println("printing deck from file: ")
-	deckFromFile.print()
 	fmt.Println(" ")
 
 	// try to create new type with name table

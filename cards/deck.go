@@ -11,6 +11,10 @@ import (
 // which is a slice of strings
 type deck []string
 
+func getFileName() string {
+	return "table_cards"
+}
+
 func newDeck() deck {
 	cards := deck{}
 
