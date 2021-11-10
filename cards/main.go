@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	cards := newDeck()
+
 	cards.shuffle()
 	cardToString := cards.toString()
 	// save cards to file
