@@ -27,7 +27,7 @@ func main() {
 	molly.address = "malang"
 	molly.contact = contact{}
 
-	// basically pass by reference
+	// basically pass by value
 	alexPointer := &alex                  // give me memory address of the value this variable pointing at alex
 	alexPointer.updateFirstname("alexis") // update value at the pointer
 	alex.print()
