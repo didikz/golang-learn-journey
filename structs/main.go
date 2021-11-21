@@ -27,7 +27,21 @@ func main() {
 	molly.address = "malang"
 	molly.contact = contact{}
 
-	fmt.Println(alex)
-	fmt.Println(moshi)
-	fmt.Printf("%+v", molly)
+	// basically pass by reference
+	alexPointer := &alex                  // give me memory address of the value this variable pointing at alex
+	alexPointer.updateFirstname("alexis") // update value at the pointer
+	alex.print()
+
+	moshiPointer := &moshi
+	moshiPointer.updateFirstname("moshimoshi")
+	moshi.print()
+	molly.print()
+}
+
+func (pointerToPerson *person) updateFirstname(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
