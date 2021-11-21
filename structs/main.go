@@ -32,9 +32,10 @@ func main() {
 	alexPointer.updateFirstname("alexis") // update value at the pointer
 	alex.print()
 
-	moshiPointer := &moshi
-	moshiPointer.updateFirstname("moshimoshi")
+	// pointer shortcut in receiver automatically
+	moshi.updateFirstname("moshimoshis")
 	moshi.print()
+
 	molly.print()
 }
 
