@@ -37,6 +37,11 @@ func main() {
 	moshi.print()
 
 	molly.print()
+
+	// in slice, no need to setup pointer because it will automatically called. Gotcha!
+	mySlice := []string{"Hi", "there", "how", "are", "you"}
+	updateSlice(mySlice)
+	fmt.Println(mySlice)
 }
 
 func (pointerToPerson *person) updateFirstname(newFirstName string) {
@@ -45,4 +50,8 @@ func (pointerToPerson *person) updateFirstname(newFirstName string) {
 
 func (p person) print() {
 	fmt.Printf("%+v", p)
+}
+
+func updateSlice(s []string) {
+	s[0] = "Bye"
 }
