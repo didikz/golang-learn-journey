@@ -17,6 +17,7 @@ func main() {
 	// adding item to map
 	bandmaid["vocal"] = "Miku Kobato"
 	bandmaid["guitar"] = "Kanami Tomo"
+	bandmaid["bass"] = "Misa"
 
 	// delete map item
 	delete(bandmaid, "guitar")
@@ -28,4 +29,12 @@ func main() {
 	// identify map key exists
 	_, found := bandmaid["drum"]
 	fmt.Println(found)
+
+	printMap(bandmaid)
+}
+
+func printMap(b map[string]string) {
+	for key, value := range b {
+		fmt.Println("key: ", key, " and value: ", value)
+	}
 }
